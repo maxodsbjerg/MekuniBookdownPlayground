@@ -1,3 +1,11 @@
+overview
 introduction
-literature
-methods
+loading-the-data
+loading-libraries
+load-data
+converting-to-tidy-text-format
+analysis
+initial-analysis
+handling-stopword
+keywords-in-context-kwic-analysis
+bigram-analysis

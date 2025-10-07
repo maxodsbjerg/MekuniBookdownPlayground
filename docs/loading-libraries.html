@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>1 Introduction | _main.knit</title>
+  <title>3 Loading libraries | _main.knit</title>
   <meta name="description" content="" />
   <meta name="generator" content="bookdown 0.44 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="1 Introduction | _main.knit" />
+  <meta property="og:title" content="3 Loading libraries | _main.knit" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="1 Introduction | _main.knit" />
+  <meta name="twitter:title" content="3 Loading libraries | _main.knit" />
   
   
   
@@ -28,8 +28,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html"/>
-<link rel="next" href="loading-the-data.html"/>
+<link rel="prev" href="loading-the-data.html"/>
+<link rel="next" href="converting-to-tidy-text-format.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -143,18 +143,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#overview"><i class="fa fa-check"></i><b>0.1</b> Overview</a></li>
 </ul></li>
 <li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
-<li class="chapter" data-level="2" data-path="loading-the-data.html"><a href="loading-the-data.html"><i class="fa fa-check"></i><b>2</b> Loading the data</a>
+<li class="chapter" data-level="2" data-path="loading-the-data.html"><a href="loading-the-data.html"><i class="fa fa-check"></i><b>2</b> Loading the data</a></li>
+<li class="chapter" data-level="3" data-path="loading-libraries.html"><a href="loading-libraries.html"><i class="fa fa-check"></i><b>3</b> Loading libraries</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="loading-the-data.html"><a href="loading-the-data.html#loading-libraries"><i class="fa fa-check"></i><b>2.1</b> Loading libraries</a></li>
-<li class="chapter" data-level="2.2" data-path="loading-the-data.html"><a href="loading-the-data.html#load-data"><i class="fa fa-check"></i><b>2.2</b> Load Data</a></li>
+<li class="chapter" data-level="3.1" data-path="loading-libraries.html"><a href="loading-libraries.html#load-data"><i class="fa fa-check"></i><b>3.1</b> Load Data</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="converting-to-tidy-text-format.html"><a href="converting-to-tidy-text-format.html"><i class="fa fa-check"></i><b>3</b> Converting to Tidy Text Format</a></li>
-<li class="chapter" data-level="4" data-path="analysis.html"><a href="analysis.html"><i class="fa fa-check"></i><b>4</b> Analysis</a>
+<li class="chapter" data-level="4" data-path="converting-to-tidy-text-format.html"><a href="converting-to-tidy-text-format.html"><i class="fa fa-check"></i><b>4</b> Converting to Tidy Text Format</a></li>
+<li class="chapter" data-level="5" data-path="analysis.html"><a href="analysis.html"><i class="fa fa-check"></i><b>5</b> Analysis</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="analysis.html"><a href="analysis.html#initial-analysis"><i class="fa fa-check"></i><b>4.1</b> Initial analysis</a></li>
-<li class="chapter" data-level="4.2" data-path="analysis.html"><a href="analysis.html#handling-stopword"><i class="fa fa-check"></i><b>4.2</b> Handling Stopword</a></li>
-<li class="chapter" data-level="4.3" data-path="analysis.html"><a href="analysis.html#keywords-in-context-kwic-analysis"><i class="fa fa-check"></i><b>4.3</b> Keywords in Context (KWIC) Analysis</a></li>
-<li class="chapter" data-level="4.4" data-path="analysis.html"><a href="analysis.html#bigram-analysis"><i class="fa fa-check"></i><b>4.4</b> Bigram Analysis</a></li>
+<li class="chapter" data-level="5.1" data-path="analysis.html"><a href="analysis.html#initial"><i class="fa fa-check"></i><b>5.1</b> INitial</a></li>
+<li class="chapter" data-level="5.2" data-path="analysis.html"><a href="analysis.html#handling-stopword"><i class="fa fa-check"></i><b>5.2</b> Handling Stopword</a></li>
+<li class="chapter" data-level="5.3" data-path="analysis.html"><a href="analysis.html#keywords-in-context-kwic-analysis"><i class="fa fa-check"></i><b>5.3</b> Keywords in Context (KWIC) Analysis</a></li>
+<li class="chapter" data-level="5.4" data-path="analysis.html"><a href="analysis.html#bigram-analysis"><i class="fa fa-check"></i><b>5.4</b> Bigram Analysis</a></li>
 </ul></li>
 </ul>
 
@@ -173,24 +173,50 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="introduction" class="section level1 hasAnchor" number="1">
-<h1><span class="header-section-number">1</span> Introduction<a href="introduction.html#introduction" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>On September 14, 1770, Christian VII issued a rescript granting complete freedom of the press in Denmark-Norway and the duchies. Previously, all writings required approval from University of Copenhagen professors.
-This reform, introduced by Johann Friedrich Struensee, ended with his execution in 1772, and press freedom did not return until 1849. The surviving texts provide rare insight into autocratic Denmark of the early 1770s.
-Publications from this brief period ranged from serious political, philosophical, and economic works to satire, fiction, gossip, and even pornography.
-Government official and scholar Bolle Willum Luxdorph (1716–88) recognized the significance of this moment and privately collected and organized these writings into 47 bound volumes, preserving them as a record of Denmark’s short-lived experiment with press freedom.</p>
-<p>These volumes have been digitised by the Royal Danish Library with support from Carlsberg Foundation in connection with a comprehensive analysis and description of the collection carried out by Ulrik Langen, Frederik Stjernfelt and Henrik Horstbøl. The texts are in Danish.</p>
-<p>These texts will be the point of departure in this notebook, where we want to examine trends in the use of words in the text of the Freedom of the Press using R for preforming this text mining task.</p>
-<p>These pages are about processing the Freedom of the Press text as data and extracting indsights quantitatively. If you wannw read the texts the classical way you can see them at: <a href="https://tekster.kb.dk">https://tekster.kb.dk</a></p>
+<div id="loading-libraries" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">3</span> Loading libraries<a href="loading-libraries.html#loading-libraries" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>The dataset is processed in the software programme R, offering various methods for statistical analysis and graphic representation of the results. In R, one works with packages each adding numerous functionalities to the core functions of R. In this example, the relevant packages are:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="loading-libraries.html#cb1-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
+<pre><code>## ── Attaching core tidyverse packages ───────────────────────────────────────────────────────── tidyverse 2.0.0 ──
+## ✔ dplyr     1.1.4     ✔ readr     2.1.5
+## ✔ forcats   1.0.0     ✔ stringr   1.5.1
+## ✔ ggplot2   3.5.2     ✔ tibble    3.3.0
+## ✔ lubridate 1.9.4     ✔ tidyr     1.3.1
+## ✔ purrr     1.1.0     
+## ── Conflicts ─────────────────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
+## ✖ dplyr::filter() masks stats::filter()
+## ✖ dplyr::lag()    masks stats::lag()
+## ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="loading-libraries.html#cb3-1" tabindex="-1"></a><span class="fu">library</span>(tidytext)</span>
+<span id="cb3-2"><a href="loading-libraries.html#cb3-2" tabindex="-1"></a><span class="fu">library</span>(stopwords)</span>
+<span id="cb3-3"><a href="loading-libraries.html#cb3-3" tabindex="-1"></a><span class="fu">library</span>(quanteda)</span></code></pre></div>
+<pre><code>## Package version: 4.3.1
+## Unicode version: 14.0
+## ICU version: 71.1
+## Parallel computing: disabled
+## See https://quanteda.io for tutorials and examples.</code></pre>
+<div id="load-data" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Load Data<a href="loading-libraries.html#load-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The code below reads data from a CSV file named “tfs_structured.csv” and stores it in a variable called tfs.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="loading-libraries.html#cb5-1" tabindex="-1"></a>tfs <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://raw.githubusercontent.com/maxodsbjerg/TextMiningTFS/refs/heads/main/data/tfs_structured.csv&quot;</span>)</span></code></pre></div>
+<pre><code>## Rows: 28133 Columns: 14
+## ── Column specification ─────────────────────────────────────────────────────────────────────────────────────────
+## Delimiter: &quot;,&quot;
+## chr (11): files, tekst, content, refnr, Titel, Bogtrykker/forlægger, Format, sider, Forfatter, Udg.år, Averte...
+## dbl  (3): række, bind, side
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
 
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="loading-the-data.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="loading-the-data.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="converting-to-tidy-text-format.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -253,20 +279,6 @@ gitbook.start({
 });
 </script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    var src = "true";
-    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:")
-      if (/^https?:/.test(src))
-        src = src.replace(/^https?:/, '');
-    script.src = src;
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
 </body>
 
 </html>

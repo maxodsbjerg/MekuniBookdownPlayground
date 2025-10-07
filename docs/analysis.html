@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>4 Analysis | _main.knit</title>
+  <meta name="description" content="" />
+  <meta name="generator" content="bookdown 0.44 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="4 Analysis | _main.knit" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="4 Analysis | _main.knit" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="converting-to-tidy-text-format.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<img src="img/DKB_logo_simplified_black_RGB.png" style="display: block; margin: 0 auto; width: 50%;" alt="Description">
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
+<ul>
+<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#overview"><i class="fa fa-check"></i><b>0.1</b> Overview</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="loading-the-data.html"><a href="loading-the-data.html"><i class="fa fa-check"></i><b>2</b> Loading the data</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="loading-the-data.html"><a href="loading-the-data.html#loading-libraries"><i class="fa fa-check"></i><b>2.1</b> Loading libraries</a></li>
+<li class="chapter" data-level="2.2" data-path="loading-the-data.html"><a href="loading-the-data.html#load-data"><i class="fa fa-check"></i><b>2.2</b> Load Data</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="converting-to-tidy-text-format.html"><a href="converting-to-tidy-text-format.html"><i class="fa fa-check"></i><b>3</b> Converting to Tidy Text Format</a></li>
+<li class="chapter" data-level="4" data-path="analysis.html"><a href="analysis.html"><i class="fa fa-check"></i><b>4</b> Analysis</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="analysis.html"><a href="analysis.html#initial-analysis"><i class="fa fa-check"></i><b>4.1</b> Initial analysis</a></li>
+<li class="chapter" data-level="4.2" data-path="analysis.html"><a href="analysis.html#handling-stopword"><i class="fa fa-check"></i><b>4.2</b> Handling Stopword</a></li>
+<li class="chapter" data-level="4.3" data-path="analysis.html"><a href="analysis.html#keywords-in-context-kwic-analysis"><i class="fa fa-check"></i><b>4.3</b> Keywords in Context (KWIC) Analysis</a></li>
+<li class="chapter" data-level="4.4" data-path="analysis.html"><a href="analysis.html#bigram-analysis"><i class="fa fa-check"></i><b>4.4</b> Bigram Analysis</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="analysis" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">4</span> Analysis<a href="analysis.html#analysis" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="initial-analysis" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Initial analysis<a href="analysis.html#initial-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The code tfs_tidy %&gt;% count(word, sort = TRUE) simply counts the frequency of each unique word in the tfs_tidy dataset, sorting the results in descending order based on word count.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="analysis.html#cb5-1" tabindex="-1"></a>tfs_tidy <span class="sc">%&gt;%</span> </span>
+<span id="cb5-2"><a href="analysis.html#cb5-2" tabindex="-1"></a>  <span class="fu">filter</span>(række <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-3"><a href="analysis.html#cb5-3" tabindex="-1"></a>  <span class="fu">filter</span>(bind <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">6</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-4"><a href="analysis.html#cb5-4" tabindex="-1"></a>  <span class="fu">count</span>(word, <span class="at">sort =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 22,581 × 2
+##    word      n
+##    &lt;chr&gt; &lt;int&gt;
+##  1 og    12073
+##  2 at     8014
+##  3 i      5560
+##  4 til    4792
+##  5 det    4566
+##  6 som    4475
+##  7 de     4296
+##  8 en     3702
+##  9 den    3688
+## 10 er     3455
+## # ℹ 22,571 more rows</code></pre>
+<p>Alot of stopwords, which are are common words like “og”, “den”, and “det” that are often filtered out during text analysis because they don’t add significant meaning. In the code tfs_tidy %&gt;% count(word, sort = TRUE), it counts all words, including stopwords, which may clutter the results with less informative words. Lets sort them out.</p>
+</div>
+<div id="handling-stopword" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Handling Stopword<a href="analysis.html#handling-stopword" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="analysis.html#cb7-1" tabindex="-1"></a>stopord_da <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">word =</span> <span class="fu">stopwords</span>(<span class="st">&quot;da&quot;</span>))</span></code></pre></div>
+<p>This code chunk creates a tibble named stopord_da containing Danish stopwords. The function stopwords(“da”) retrieves a list of common stopwords in the Danish language. The tibble stopord_da will have a single column named “word” containing the Danish stopwords.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="analysis.html#cb8-1" tabindex="-1"></a>stopord_de <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">word =</span> <span class="fu">stopwords</span>(<span class="st">&quot;de&quot;</span>))</span></code></pre></div>
+<p>This code chunk creates a tibble named stopord_de containing German stopwords. Similar to the previous chunk, the function stopwords(“de”) retrieves a list of common stopwords in the German language. The tibble stopord_de will have a single column named “word” containing the German stopwords.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="analysis.html#cb9-1" tabindex="-1"></a>stopord_tfs <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://raw.githubusercontent.com/maxodsbjerg/TextMiningTFS/refs/heads/main/data/tfs_stopord.csv&quot;</span>)</span></code></pre></div>
+<pre><code>## Rows: 60 Columns: 1
+## ── Column specification ─────────────────────────────────────────────────────────────────────────────────────────
+## Delimiter: &quot;,&quot;
+## chr (1): word
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<p>This code chunk reads data from a CSV file named “tfs_stopord.csv” located in the “./data” directory. The function read_csv() reads the CSV file and assigns the data to the variable stopord_tfs. This file likely contains stopwords specific to the dataset or project being analyzed. The structure of the data will be similar to a tibble, with one column containing the stopwords. These stop words are specifically tailored for Trykkefrihedens Skrifter, considering older spelling conventions of stop words.
+## Removing stopwords and counting again:</p>
+<p>This code performs several operations on the tfs_tidy dataset, which contains tokenized text data:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="analysis.html#cb11-1" tabindex="-1"></a>tfs_tidy <span class="sc">%&gt;%</span></span>
+<span id="cb11-2"><a href="analysis.html#cb11-2" tabindex="-1"></a>  <span class="fu">anti_join</span>(stopord_da) <span class="sc">%&gt;%</span> </span>
+<span id="cb11-3"><a href="analysis.html#cb11-3" tabindex="-1"></a>  <span class="fu">anti_join</span>(stopord_de) <span class="sc">%&gt;%</span> </span>
+<span id="cb11-4"><a href="analysis.html#cb11-4" tabindex="-1"></a>  <span class="fu">anti_join</span>(stopord_tfs) <span class="sc">%&gt;%</span> </span>
+<span id="cb11-5"><a href="analysis.html#cb11-5" tabindex="-1"></a>  <span class="fu">count</span>(word, <span class="at">sort =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<pre><code>## Joining with `by = join_by(word)`
+## Joining with `by = join_by(word)`
+## Joining with `by = join_by(word)`</code></pre>
+<pre><code>## # A tibble: 166,534 × 2
+##    word      n
+##    &lt;chr&gt; &lt;int&gt;
+##  1 gud    5781
+##  2 tid    4711
+##  3 mere   4425
+##  4 imod   4418
+##  5 vore   4303
+##  6 store  4273
+##  7 folk   4269
+##  8 2      4257
+##  9 stor   4086
+## 10 intet  4052
+## # ℹ 166,524 more rows</code></pre>
+<p>tfs_tidy %&gt;%: The %&gt;% operator, known as the pipe operator, chains operations together, passing the tfs_tidy dataset to the next function in the sequence. anti_join(stopord_da) %&gt;%: This operation removes Danish stopwords from the text data by performing an anti-join with the stopord_da dataset, which contains Danish stopwords. An anti-join retains only the rows from the left dataset (tfs_tidy) that do not have a match in the right dataset (stopord_da). anti_join(stopord_de) %&gt;%: Similarly, this operation removes German stopwords from the text data by performing an anti-join with the stopord_de dataset, which contains German stopwords. anti_join(stopord_tfs) %&gt;%: This operation removes project-specific stopwords from the text data by performing an anti-join with the stopord_tfs dataset, which contains stopwords specific to the Trykkefrihedens Skrifter project. count(word, sort = TRUE): Finally, the count() function tallies the frequency of each unique word remaining in the text data after removing the stopwords. The sort = TRUE argument sorts the results in descending order of word frequency. In summary, this code chunk filters out Danish, German, and project-specific stopwords from the tfs_tidy dataset and then counts the frequency of the remaining words.</p>
+<p>This does the exact same thing, but only on text from Række 1, binde 5+6 (Landøkonomi (31 skrifter).)</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="analysis.html#cb14-1" tabindex="-1"></a>tfs_tidy <span class="sc">%&gt;%</span></span>
+<span id="cb14-2"><a href="analysis.html#cb14-2" tabindex="-1"></a>  <span class="fu">anti_join</span>(stopord_da) <span class="sc">%&gt;%</span> </span>
+<span id="cb14-3"><a href="analysis.html#cb14-3" tabindex="-1"></a>  <span class="fu">anti_join</span>(stopord_de) <span class="sc">%&gt;%</span> </span>
+<span id="cb14-4"><a href="analysis.html#cb14-4" tabindex="-1"></a>  <span class="fu">anti_join</span>(stopord_tfs) <span class="sc">%&gt;%</span> </span>
+<span id="cb14-5"><a href="analysis.html#cb14-5" tabindex="-1"></a>  <span class="fu">count</span>(word, <span class="at">sort =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<pre><code>## Joining with `by = join_by(word)`
+## Joining with `by = join_by(word)`
+## Joining with `by = join_by(word)`</code></pre>
+<pre><code>## # A tibble: 166,534 × 2
+##    word      n
+##    &lt;chr&gt; &lt;int&gt;
+##  1 gud    5781
+##  2 tid    4711
+##  3 mere   4425
+##  4 imod   4418
+##  5 vore   4303
+##  6 store  4273
+##  7 folk   4269
+##  8 2      4257
+##  9 stor   4086
+## 10 intet  4052
+## # ℹ 166,524 more rows</code></pre>
+</div>
+<div id="keywords-in-context-kwic-analysis" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Keywords in Context (KWIC) Analysis<a href="analysis.html#keywords-in-context-kwic-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In this code we are going to conduct a ‘Keywords in Context’ (KWIC) analysis on the text data from Trykkefrihedens Skrifter using the quanteda package. This analysis will allow us to examine how specific keywords, such as ‘jord’, are used within the text documents, providing valuable insight into the context and usage patterns of these keywords throughout the corpus.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="analysis.html#cb17-1" tabindex="-1"></a><span class="co">#Creating quanteda corpus</span></span>
+<span id="cb17-2"><a href="analysis.html#cb17-2" tabindex="-1"></a>tfs_corp <span class="ot">&lt;-</span> tfs <span class="sc">%&gt;%</span></span>
+<span id="cb17-3"><a href="analysis.html#cb17-3" tabindex="-1"></a>  <span class="co">#Choose Række and Bind of choice</span></span>
+<span id="cb17-4"><a href="analysis.html#cb17-4" tabindex="-1"></a>  <span class="fu">filter</span>(række <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> bind <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">6</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb17-5"><a href="analysis.html#cb17-5" tabindex="-1"></a>  <span class="fu">select</span>(refnr, side, content) <span class="sc">%&gt;%</span></span>
+<span id="cb17-6"><a href="analysis.html#cb17-6" tabindex="-1"></a>  <span class="fu">corpus</span>(<span class="at">text_field =</span> <span class="st">&quot;content&quot;</span>)</span></code></pre></div>
+<pre><code>## Warning: NA is replaced by empty string</code></pre>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="analysis.html#cb19-1" tabindex="-1"></a><span class="co"># Assign docid to the corpus - makes it easier to track the actual text back to Trykkefrihedens skrifter</span></span>
+<span id="cb19-2"><a href="analysis.html#cb19-2" tabindex="-1"></a>docid <span class="ot">&lt;-</span> <span class="fu">paste0</span>(tfs_corp<span class="sc">$</span>refnr, <span class="st">&quot;- side &quot;</span>, tfs_corp<span class="sc">$</span>side)</span>
+<span id="cb19-3"><a href="analysis.html#cb19-3" tabindex="-1"></a><span class="fu">docnames</span>(tfs_corp) <span class="ot">&lt;-</span> docid</span>
+<span id="cb19-4"><a href="analysis.html#cb19-4" tabindex="-1"></a></span>
+<span id="cb19-5"><a href="analysis.html#cb19-5" tabindex="-1"></a><span class="co">#Keywords in context </span></span>
+<span id="cb19-6"><a href="analysis.html#cb19-6" tabindex="-1"></a>tfs_kwic <span class="ot">&lt;-</span> tfs_corp <span class="sc">%&gt;%</span></span>
+<span id="cb19-7"><a href="analysis.html#cb19-7" tabindex="-1"></a>  <span class="fu">tokens</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb19-8"><a href="analysis.html#cb19-8" tabindex="-1"></a>  <span class="co">#Choose phrase of interest</span></span>
+<span id="cb19-9"><a href="analysis.html#cb19-9" tabindex="-1"></a>  <span class="fu">kwic</span>(<span class="at">pattern =</span> <span class="fu">phrase</span>(<span class="st">&quot;jord&quot;</span>), <span class="at">window =</span> <span class="dv">4</span>)</span>
+<span id="cb19-10"><a href="analysis.html#cb19-10" tabindex="-1"></a>tfs_kwic</span></code></pre></div>
+<pre><code>## Keyword-in-context with 199 matches.                                                                                                               
+##   [1.5.1- side 39, 166]                         enhver Bonde havde sin | Jord | for sig selv afdeelt           
+##     [1.5.1- side 40, 7]                             han skal giøde sin | Jord | , ei bortføre mere             
+##    [1.5.1- side 40, 62]                             naar han havde sin | Jord | for sig selv beliggende        
+##   [1.5.2- side 33, 201]                                   Steen, Tang, | Jord | &amp; c..                          
+##    [1.5.2- side 38, 28]                      overlade ham min Eyendoms | Jord | og Grund, for                  
+##   [1.5.2- side 50, 163]                       falde paa den allerbeste | Jord | i Markerne, andres             
+##   [1.5.2- side 50, 190]                                at han fik mere | Jord | i sit Maal,                    
+##   [1.5.2- side 50, 216]                        megen og slet ufrugtbar | Jord | for den, som                   
+##   [1.5.2- side 50, 238]                              svare: Den slette | Jord | kan ved Flid og                
+##   [1.5.2- side 51, 104]                  etableres paa den dyrkværdige | Jord | , som skulde anvendes          
+##    [1.5.2- side 52, 15]                            Maade. At Bøndernes | Jord | for hver Gaards Hartkorn       
+##   [1.5.2- side 52, 145]                      Lods-Eyer har mere samlet | Jord | i Markerne, end                
+##   [1.5.2- side 52, 215]                               Sæd: Den yderste | Jord | , som er længst                
+##   [1.5.2- side 53, 106]                              Størrelse, al den | Jord | , som de nu                    
+##   [1.5.2- side 54, 131]                                hver fik al sin | Jord | , som den tilkom               
+##   [1.5.2- side 54, 190]                             benytte sig af sin | Jord | : al Jorden bekom              
+##   [1.5.2- side 55, 224]                                ; thi jo mindre | Jord | Bonden har, jo                 
+##    [1.5.2- side 56, 49]                                : meget af hans | Jord | bliver da kuns maadelig        
+##   [1.5.2- side 56, 106]                           Gaarden og saa megen | Jord | forsømt, til stor              
+##   [1.5.2- side 56, 186]                                , efter 4 Slags | Jord | , saaledes: Den                
+##   [1.5.2- side 56, 195]                            1ste og beste Slags | Jord | , hvoraf beregnes paa          
+##   [1.5.2- side 56, 213]                           Tønders Udsæd, eller | Jord | af 42000 Qvadrat Alen          
+##    [1.5.2- side 57, 18]                          6 Tønders Udsæd eller | Jord | af 84000 Qvadrat Alen          
+##    [1.5.2- side 57, 45]                          9 Tønders Udsæd eller | Jord | af 126000 Qvadrat Alens        
+##    [1.5.2- side 57, 71]                          første og beste Slags | Jord | , kan med egen                 
+##    [1.5.2- side 57, 82]                       en Plov forsvarlig drive | Jord | idet høyeste til 5             
+##   [1.5.2- side 57, 155]                          2de første Slags Sæde | Jord | , som er af                    
+##     [1.5.3- side 17, 3]                                       17 bryde | Jord | op til Agerland,               
+##    [1.5.3- side 18, 86]                               hver Bye fik sin | Jord | for sig selv,                  
+##   [1.5.3- side 18, 119]                       enhver Bonde blev udlagt | Jord | til en fuldkommen Frugthave    
+##    [1.5.3- side 19, 11]                              han har saa megen | Jord | , som kan give                 
+##   [1.5.3- side 29, 152]                              maa lade sin egen | Jord | ligge udyrket, og              
+##   [1.5.3- side 30, 212]                           af de øvrige Bønders | Jord | i Brug; for                    
+##    [1.5.3- side 31, 19]                          faae enhver Bonde sin | Jord | udmaalet og tildeelt;          
+##    [1.5.4- side 57, 44]                          Legeme skal blive til | Jord | , hvoraf det er                
+##     [1.5.5- side 4, 98]                                  Luft, Vand og | Jord | , jo indeholder al             
+##     [1.5.5- side 7, 77]                            Stene, eller sandig | Jord | , hvorudi var indblandet       
+##    [1.5.5- side 7, 152]                                   af de Stene, | Jord | eller andre Bergarter,         
+##    [1.5.5- side 10, 16]                    , Havtang og Qvarksandagtig | Jord | , med mere deslige             
+##   [1.5.5- side 53, 103]             men dog indeholder Dyrkningsværdig | Jord | , af saadan Beskaffenhed       
+##   [1.5.5- side 58, 122] fremsettende eller antreffende Salpeterfødende | Jord | ; Derimod udi sterk            
+##   [1.5.5- side 62, 201]                 indlegges to Skiepper Salpeter | Jord | , samt 1/                      
+##   [1.5.5- side 68, 199]                      Hartkorn som den brugende | Jord | vr at sat i                    
+##   [1.5.5- side 102, 61]                             , Jordbakker, flad | Jord | og Vande, nemlig               
+##   [1.5.5- side 107, 23]                     og Landmaalings Redskaber; | Jord | - og Berg-Boerer;              
+##  [1.5.5- side 124, 112]                                  Luft, Vand og | Jord | ( Steenriget dermed indbegreben
+##     [1.5.6- side 8, 44]                         , uden hvilket hverken | Jord | , Guld eller Sølv              
+##     [1.5.6- side 8, 80]                         kunde eye en Strækning | Jord | af en Snees Miile              
+##    [1.5.6- side 26, 12]                         , ligesom en ufrugtbar | Jord | ved Dyrkelse bringes til       
+##    [1.5.6- side 38, 66]                          ikke Dyrkelsen af vor | Jord | det første, som                
+##     [1.5.7- side 6, 84]                              kun en ringe Plet | Jord | er i Følge med                 
+##    [1.5.7- side 6, 106]                   Boeliger forsynede med noget | Jord | Brug, lidet eller              
+##   [1.5.7- side 10, 108]                             a ) Hidtil udyrket | Jord | findes paa adskillige Stæder   
+##     [1.5.7- side 11, 2]                                              9 | Jord | for sig selv.                  
+##    [1.5.7- side 11, 19]                                 er at have sin | Jord | omkring sin Gaard,             
+##    [1.5.7- side 11, 55]                                 , at den beste | Jord | ofte ligger saa langt          
+##   [1.5.7- side 11, 144]                     Paa denne allerede dyrkede | Jord | kunde boe flere Familier       
+##    [1.5.7- side 12, 80]                      have i Almindelighed mere | Jord | end de NB.                     
+##   [1.5.7- side 13, 100]                               hver Vang. Denne | Jord | skulde inddeeles i saa         
+##    [1.5.7- side 19, 66]                          er det nogenlunde god | Jord | og man kand overkomme          
+##    [1.5.7- side 20, 19]                 indføres Huusmanden deeler sin | Jord | i 6 Agre,                      
+##   [1.5.7- side 22, 158]                        Gaard skulle miste mere | Jord | end en anden,                  
+##   [1.5.7- side 22, 170]                           fik mere eller bedre | Jord | end                            
+##    [1.5.7- side 27, 25]                 Bondegaard burde have faamegen | Jord | , som med 6                    
+##     [1.5.8- side 31, 3]                                 31 Huusbondens | Jord | , som derved ville             
+##    [1.5.8- side 37, 88]                        behandler og dyrker sin | Jord | , eller hvorledes hans         
+##    [1.5.9- side 37, 17]                            dets Sted et Stykke | Jord | i hver af Byens                
+##   [1.5.9- side 48, 165]                           Gaard og dyrke deres | Jord | , med videre.                  
+##  [1.5.10- side 51, 217]                        bruger noget af Bondens | Jord | , og saadant;                  
+##   [1.5.11- side 12, 17]                               om ikke den hele | Jord | har almindelige, langsomme     
+##     [1.6.1- side 7, 61]                 Beboere bortfæstet eller leiet | Jord | . 3. )                         
+##    [1.6.1- side 7, 135]               tilfælles indhegnet en Strekning | Jord | fra det almindelige Fælleskab  
+##     [1.6.1- side 9, 35]                         blandede i andre Byers | Jord | , endskiønt hver Mand          
+##     [1.6.1- side 9, 86]                           have saare liden god | Jord | , som nu ligger                
+##     [1.6.1- side 9, 96]                 imellem den paagrændsende Byes | Jord | ; og den skal                  
+##    [1.6.1- side 9, 109]                              er den anden Byes | Jord | , som ligger iblant            
+##    [1.6.1- side 9, 132]                          end deres egen øvrige | Jord | . Hvo der veed                 
+##    [1.6.1- side 9, 232]                       et desstørre Stykke slet | Jord | . Vel bør denne                
+##    [1.6.1- side 9, 245]                                , naar en Mands | Jord | skal vurderes til Skat         
+##     [1.6.1- side 10, 5]                             10 valent kan slet | Jord | aldrig blive for god           
+##    [1.6.1- side 10, 10]                           aldrig blive for god | Jord | . Den slette store             
+##    [1.6.1- side 10, 34]                          Strekning af den gode | Jord | , og hvad den                  
+##   [1.6.1- side 10, 139]                           den ringe Andeel god | Jord | , som Byen maaskee             
+##    [1.6.1- side 11, 12]                            , og fremmede Byers | Jord | udskiftet, førend der          
+##   [1.6.1- side 13, 152]                          Beboere faae al deres | Jord | paa Sandbanker, eller          
+##    [1.6.1- side 14, 39]                       Længde har indtaget mere | Jord | at dyrke, da                   
+##   [1.6.1- side 14, 168]                              Mand kan faae sin | Jord | tildelt paa eet Sted           
+##   [1.6.1- side 14, 217]                               som faaer al sin | Jord | paa Sandbanker, eller          
+##   [1.6.1- side 14, 243]                            har ikkun eet slags | Jord | , blive i Stand                
+##     [1.6.1- side 15, 3]                                       15 slags | Jord | imod, som han                  
+##    [1.6.1- side 15, 19]                               , som faae deres | Jord | tildeel; længst bort           
+##   [1.6.1- side 15, 179]                                . Skal al Byens | Jord | deles om, og                   
+##   [1.6.1- side 15, 188]                               hver faae al sin | Jord | paa eet Sted,                  
+##    [1.6.1- side 16, 18]                                med mere. Ingen | Jord | vil det Aar blive              
+##    [1.6.1- side 16, 33]                          han beholder ikke den | Jord | , som han skal                 
+##   [1.6.1- side 18, 185]                         et særdeles got Stykke | Jord | , som hans Fællesbrødre        
+##   [1.6.1- side 20, 190]                            , foretager en Byes | Jord | efter den anden,               
+##    [1.6.1- side 21, 44]                          meget muelig lige god | Jord | , hvorefter Gierdets Sted      
+##    [1.6.1- side 21, 64]                              der ikke faae god | Jord | igien, eller ved               
+##    [1.6.1- side 21, 75]                       Gierdet gaaer over deres | Jord | , erstattes dem af             
+##   [1.6.1- side 21, 181]               have indhegnet deres beqvemmeste | Jord | , og derover allerede          
+##   [1.6.1- side 24, 139]                          og tilmaales hver sin | Jord | , samlet paa eet               
+##   [1.6.1- side 25, 128]                          den inddeler al Byens | Jord | i fem eller sex                
+##   [1.6.1- side 25, 206]                           antegner, hvor megen | Jord | hver Mand i Byen               
+##    [1.6.1- side 26, 48]                          Ager og faaer udreven | Jord | igien, tillegges visse         
+##    [1.6.1- side 26, 60]                           den som faaer giødet | Jord | for udreven; Den               
+##   [1.6.1- side 26, 221]                          . legges den nærmeste | Jord | ved Byen, og                   
+##   [1.6.1- side 26, 246]                      har faaet kiendelig bedre | Jord | end andre, faaer               
+##   [1.6.1- side 27, 145]                            herefter, hvor eens | Jord | ligger ved et andet            
+##   [1.6.1- side 27, 195]                               , saa langt hans | Jord | strekker. Saa skal             
+##   [1.6.1- side 27, 213]                            enten den hele Byes | Jord | , om han er                    
+##   [1.6.1- side 27, 223]                               Ejere, eller den | Jord | , som tilmaales hans           
+##    [1.6.1- side 29, 11]                     imellem en Mands tilmaalte | Jord | , tildeles hannem og           
+##     [1.6.1- side 30, 8]                             det første Aar den | Jord | , som da er                    
+##    [1.6.1- side 30, 40]                   følgende Aaringer den øvrige | Jord | , som hvert Aar                
+##   [1.6.1- side 30, 126]                             det meste af deres | Jord | samlet paa eet Sted            
+##   [1.6.1- side 31, 130]                    Huusmand tildeles et Stykke | Jord | i Udkant, hvor                 
+##   [1.6.1- side 51, 129]                          flye Karlen den beste | Jord | , rigelig Giødning,            
+##     [1.6.2- side 14, 3]                                 14 trikulerede | Jord | ; Til Herregaardene derimod    
+##   [1.6.2- side 67, 120]                                 Sandhed, at en | Jord | , saasnart den bærer           
+##   [1.6.2- side 67, 133]                                  : At en maver | Jord | intet giver af sig             
+##   [1.6.3- side 49, 228]                             ville drive al sin | Jord | paa ganske tilforn i           
+##    [1.6.4- side 21, 29]                                korn i Straaet, | Jord | , Sand, Skuer                  
+##    [1.6.5- side 28, 64]                                    ? Igel. Den | Jord | , Herren tog fra               
+##   [1.6.5- side 28, 119]                          af denne dem fratagne | Jord | . Trekholt. Hvad               
+##   [1.6.8- side 37, 121]                      Vandtuder, overklædte med | Jord | , naar Vandet ey               
+##   [1.6.8- side 38, 111]                         , hvoraf det opkastede | Jord | , Gruus og Sand                
+##    [1.6.9- side 9, 170]                   Almindelighed tillige al den | Jord | , som Bønderne boe             
+##     [1.6.9- side 10, 9]                    der var overflødigt udyrket | Jord | , da de,                       
+##    [1.6.9- side 10, 83]                   ville antage denne Strækning | Jord | , bygget dem Huse              
+##   [1.6.9- side 10, 160]                               ved at dyrke den | Jord | , som Eyeren af                
+##   [1.6.9- side 12, 139]                              har betalt al den | Jord | , som Bønderne indehave        
+##   [1.6.9- side 12, 163]                         og den dertil henlagte | Jord | ; Loven veed og                
+##   [1.6.9- side 14, 145]                     hans til Bønderne uddeelte | Jord | ved deres Dyrkning indbringer  
+##   [1.6.9- side 14, 152]                     Dyrkning indbringer, denne | Jord | : bliver ved Beboernes         
+##    [1.6.9- side 15, 30]                         samt Redskaber til sin | Jord | og Huusholdning, maae          
+##    [1.6.9- side 15, 46]                                  det, som Hans | Jord | maatte indbringe ham anseeligst
+##   [1.6.9- side 15, 164]     Almindelighed dyrekiøbte eller forhvervede | Jord | bort til een ham               
+##    [1.6.9- side 16, 11]                            eller en Fods breed | Jord | , i Steden for                 
+##    [1.6.9- side 16, 92]                                 , og saa meget | Jord | dertil, at han                 
+##    [1.6.9- side 21, 53]                          dem med hans Eyendoms | Jord | , som de bruge                 
+##    [1.6.9- side 23, 46]                            , at den forbedrede | Jord | ikke skal matriculeres Høyere  
+##   [1.6.9- side 38, 122]                      sin ham allene tilhørende | Jord | i Fæste, saalænge              
+##    [1.6.9- side 44, 20]                                 da der i ringe | Jord | saaes mindre Korn,             
+##    [1.6.9- side 44, 29]                         og skal pløyes desmere | Jord | til en Skieppe,                
+##    [1.6.9- side 53, 24]                            lade meget af deres | Jord | ligge udyrket, og              
+##    [1.6.9- side 54, 79]                       baade Nytte af Bøndernes | Jord | , om han selv                  
+##   [1.6.9- side 61, 130]                           , som Agerbond eller | Jord | , og hvad Regel                
+##   [1.6.9- side 70, 161]                         til hans Gaard hørende | Jord | indhegnet for sig selv         
+##     [1.6.9- side 71, 7]                              komme, hvor meget | Jord | bliver spildt ved Grøfterne    
+##   [1.6.9- side 75, 139]                             , hvad enten deres | Jord | støder lige til Aaen           
+##  [1.6.10- side 11, 189]                    Besidderen af den manglende | Jord | aldrig kunne undskylde sig     
+##  [1.6.10- side 11, 212]                            den frugtbare, hvis | Jord | i denne Tilfælde ikke          
+##   [1.6.10- side 14, 10]                                har en lige god | Jord | med sine Naboer,               
+##  [1.6.10- side 27, 207]                         . Derved spartes megen | Jord | , som ellers gik               
+##  [1.6.10- side 28, 127]                               den gode og fede | Jord | , maatte forpligtes til        
+##    [1.6.11- side 8, 10]                                af den Grund og | Jord | , I have;                      
+##   [1.6.11- side 11, 95]                                fik al den gode | Jord | ved Byen, og                   
+##  [1.6.11- side 11, 133]                                . Hvad den gode | Jord | angaaer ved Byen,              
+##   [1.6.11- side 12, 24]                                , at den slette | Jord | er, og det                     
+##   [1.6.11- side 15, 51]                      Fælledskabet. Naar saadan | Jord | bliver pløiet vaad,            
+##  [1.6.11- side 23, 138]                               need i den sorte | Jord | , ja vent oprykket             
+##  [1.6.11- side 24, 156]                           dyrker alt for megen | Jord | ; da det er                    
+##   [1.6.11- side 25, 77]                              man regne at hans | Jord | ikke faaer Giødning uden       
+##  [1.6.11- side 27, 205]                       blande Frøet iblant fiin | Jord |                                
+##  [1.6.11- side 31, 158]                       fordeelagtig at have sin | Jord | samlet paa et Sted             
+##  [ reached &#39;max&#39; / getOption(&quot;max.print&quot;) -- omitted 33 rows ]</code></pre>
+<p>tfs_corp &lt;- tfs_df %&gt;% filter(række == 1 &amp; bind %in% c(5,6)) %&gt;% select(refnr, side, content) %&gt;% corpus(text_field = “content”): This code filters the data frame tfs_df to include only rows where “række” equals 1 and “bind” is either 5 or 6. Then it selects columns “refnr,” “side,” and “content” from the filtered data and creates a corpus named tfs_corp using the corpus() function from the quanteda package, where “content” is the text field used in the corpus. docid &lt;- paste0(tfs_corp<span class="math inline">\(refnr, &quot;- side &quot;, tfs_corp\)</span>side): This line creates unique document IDs for each text document in the corpus by combining “refnr” and “side” columns separated by “- side”. docnames(tfs_corp) &lt;- docid: This assigns the document IDs to the corpus, making it easier to track the original text back to Trykkefrihedens Skrifter. tfs_kwic &lt;- tfs_corp %&gt;% tokens() %&gt;% kwic(pattern = phrase(“jord”), window = 4): This code generates a keyword-in-context (KWIC) analysis for the word “jord” with a window size of 4 words, which shows the context in which “jord” appears in the text documents within the corpus. The KWIC analysis provides insight into how the word is used and in what context within the text data.</p>
+</div>
+<div id="bigram-analysis" class="section level2 hasAnchor" number="4.4">
+<h2><span class="header-section-number">4.4</span> Bigram Analysis<a href="analysis.html#bigram-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Coming soon</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="converting-to-tidy-text-format.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["_main.pdf", "_main.epub"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "section"
+  },
+  "language": {
+    "ui": {
+      "chapter_name": "Chapter ",
+      "toc_title": "Table of Contents",
+      "prev": "Previous",
+      "next": "Next",
+      "home": "Home"
+    }
+  }
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

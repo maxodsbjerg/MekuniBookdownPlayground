@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>1 Introduction | _main.knit</title>
+  <title>3 Converting to Tidy Text Format | _main.knit</title>
   <meta name="description" content="" />
   <meta name="generator" content="bookdown 0.44 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="1 Introduction | _main.knit" />
+  <meta property="og:title" content="3 Converting to Tidy Text Format | _main.knit" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="1 Introduction | _main.knit" />
+  <meta name="twitter:title" content="3 Converting to Tidy Text Format | _main.knit" />
   
   
   
@@ -28,8 +28,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html"/>
-<link rel="next" href="loading-the-data.html"/>
+<link rel="prev" href="loading-the-data.html"/>
+<link rel="next" href="analysis.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -173,15 +173,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="introduction" class="section level1 hasAnchor" number="1">
-<h1><span class="header-section-number">1</span> Introduction<a href="introduction.html#introduction" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>On September 14, 1770, Christian VII issued a rescript granting complete freedom of the press in Denmark-Norway and the duchies. Previously, all writings required approval from University of Copenhagen professors.
-This reform, introduced by Johann Friedrich Struensee, ended with his execution in 1772, and press freedom did not return until 1849. The surviving texts provide rare insight into autocratic Denmark of the early 1770s.
-Publications from this brief period ranged from serious political, philosophical, and economic works to satire, fiction, gossip, and even pornography.
-Government official and scholar Bolle Willum Luxdorph (1716–88) recognized the significance of this moment and privately collected and organized these writings into 47 bound volumes, preserving them as a record of Denmark’s short-lived experiment with press freedom.</p>
-<p>These volumes have been digitised by the Royal Danish Library with support from Carlsberg Foundation in connection with a comprehensive analysis and description of the collection carried out by Ulrik Langen, Frederik Stjernfelt and Henrik Horstbøl. The texts are in Danish.</p>
-<p>These texts will be the point of departure in this notebook, where we want to examine trends in the use of words in the text of the Freedom of the Press using R for preforming this text mining task.</p>
-<p>These pages are about processing the Freedom of the Press text as data and extracting indsights quantitatively. If you wannw read the texts the classical way you can see them at: <a href="https://tekster.kb.dk">https://tekster.kb.dk</a></p>
+<div id="converting-to-tidy-text-format" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">3</span> Converting to Tidy Text Format<a href="converting-to-tidy-text-format.html#converting-to-tidy-text-format" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>This code takes the data stored in the variable tfs, which contains text data from Trykkefrihedens skrifter, and converts it into a tidy format suitable for text analysis.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="converting-to-tidy-text-format.html#cb4-1" tabindex="-1"></a>tfs_tidy <span class="ot">&lt;-</span> tfs <span class="sc">%&gt;%</span> </span>
+<span id="cb4-2"><a href="converting-to-tidy-text-format.html#cb4-2" tabindex="-1"></a>  <span class="fu">unnest_tokens</span>(word, content)</span></code></pre></div>
+<p>Here’s a breakdown of the code: tfs_tidy: This is a new variable where the transformed data will be stored. tfs %&gt;%: This is the pipe operator %&gt;%, which is used to chain operations together in R. It takes the data frame tfs and passes it as the first argument to the function or operation that follows. unnest_tokens(word, content): This is a function call from the tidytext package. It tokenizes the text data, breaking it down into individual words. The word argument specifies the name of the column that will contain the individual words, and the content argument specifies the column containing the text data to be tokenized. In summary, the code transforms the original data frame tfs by breaking down the text data into individual words and storing them in a new variable called tfs_tidy, making it suitable for further text analysis tasks.</p>
 
 </div>
             </section>
@@ -189,8 +186,8 @@ Government official and scholar Bolle Willum Luxdorph (1716–88) recognized the
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="loading-the-data.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="loading-the-data.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="analysis.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
