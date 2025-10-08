@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>3 Converting to Tidy Text Format | _main.knit</title>
+  <title>Preface | _main.knit</title>
   <meta name="description" content="" />
   <meta name="generator" content="bookdown 0.44 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="3 Converting to Tidy Text Format | _main.knit" />
+  <meta property="og:title" content="Preface | _main.knit" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="3 Converting to Tidy Text Format | _main.knit" />
+  <meta name="twitter:title" content="Preface | _main.knit" />
   
   
   
@@ -28,8 +28,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="loading-the-data.html"/>
-<link rel="next" href="analysis.html"/>
+
+<link rel="next" href="introduction.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -135,7 +135,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<img src="img/DKB_logo_simplified_black_RGB.png" style="display: block; margin: 0 auto; width: 50%;" alt="Description">
+<img src="../img/DKB_logo_simplified_black_RGB.png" style="display: block; margin: 0 auto; width: 50%;" alt="Description">
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
@@ -173,21 +173,33 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="converting-to-tidy-text-format" class="section level1 hasAnchor" number="3">
-<h1><span class="header-section-number">3</span> Converting to Tidy Text Format<a href="converting-to-tidy-text-format.html#converting-to-tidy-text-format" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>This code takes the data stored in the variable tfs, which contains text data from Trykkefrihedens skrifter, and converts it into a tidy format suitable for text analysis.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="converting-to-tidy-text-format.html#cb4-1" tabindex="-1"></a>tfs_tidy <span class="ot">&lt;-</span> tfs <span class="sc">%&gt;%</span> </span>
-<span id="cb4-2"><a href="converting-to-tidy-text-format.html#cb4-2" tabindex="-1"></a>  <span class="fu">unnest_tokens</span>(word, content)</span></code></pre></div>
-<p>Here’s a breakdown of the code: tfs_tidy: This is a new variable where the transformed data will be stored. tfs %&gt;%: This is the pipe operator %&gt;%, which is used to chain operations together in R. It takes the data frame tfs and passes it as the first argument to the function or operation that follows. unnest_tokens(word, content): This is a function call from the tidytext package. It tokenizes the text data, breaking it down into individual words. The word argument specifies the name of the column that will contain the individual words, and the content argument specifies the column containing the text data to be tokenized. In summary, the code transforms the original data frame tfs by breaking down the text data into individual words and storing them in a new variable called tfs_tidy, making it suitable for further text analysis tasks.</p>
+<!--bookdown:title:end-->
+<!--bookdown:title:start-->
+<div id="preface" class="section level1 unnumbered hasAnchor">
+<h1>Preface<a href="index.html#preface" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>This repository contains the results of a text mining analysis conducted on Trykkefrihedens Skrifter using R programming language. Text mining involves extracting meaningful insights and patterns from textual data.</p>
+<div id="overview" class="section level2 hasAnchor" number="0.1">
+<h2><span class="header-section-number">0.1</span> Overview<a href="index.html#overview" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Text mining techniques were applied to the Trykkefrihedens Skrifter dataset to uncover valuable information and trends within the text. The analysis aimed to understand the language, themes, and patterns present in the Skrifter.
+Methodology</p>
+<ul>
+<li><p>Loading Data: The dataset was loaded from a CSV file named “tfs_structured.csv”.</p></li>
+<li><p>Converting to Tidy Text Format: The text data was transformed into a tidy format suitable for analysis using R packages like tidyverse and tidytext.</p></li>
+<li><p>Initial Analysis: Basic analyses were performed to count word frequencies and understand the distribution of words in the text.</p></li>
+<li><p>Handling Stopwords: Common stopwords in Danish and German languages, as well as project-specific stopwords, were identified and removed from the text data to focus on meaningful words.</p></li>
+<li><p>Keywords in Context (KWIC) Analysis: A KWIC analysis was conducted to explore the context in which specific keywords appear in the text documents.</p></li>
+<li><p>Bigrams Analysis: Bigrams, or word pairs, were analyzed to identify associations and patterns in the text.</p></li>
+</ul>
 
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="loading-the-data.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="analysis.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+
+<a href="introduction.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

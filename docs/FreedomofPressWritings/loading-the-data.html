@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>1 Introduction | _main.knit</title>
+  <title>2 Loading the data | _main.knit</title>
   <meta name="description" content="" />
   <meta name="generator" content="bookdown 0.44 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="1 Introduction | _main.knit" />
+  <meta property="og:title" content="2 Loading the data | _main.knit" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="1 Introduction | _main.knit" />
+  <meta name="twitter:title" content="2 Loading the data | _main.knit" />
   
   
   
@@ -28,8 +28,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html"/>
-<link rel="next" href="loading-the-data.html"/>
+<link rel="prev" href="introduction.html"/>
+<link rel="next" href="converting-to-tidy-text-format.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -135,7 +135,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<img src="img/DKB_logo_simplified_black_RGB.png" style="display: block; margin: 0 auto; width: 50%;" alt="Description">
+<img src="../img/DKB_logo_simplified_black_RGB.png" style="display: block; margin: 0 auto; width: 50%;" alt="Description">
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
@@ -173,24 +173,39 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="introduction" class="section level1 hasAnchor" number="1">
-<h1><span class="header-section-number">1</span> Introduction<a href="introduction.html#introduction" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>On September 14, 1770, Christian VII issued a rescript granting complete freedom of the press in Denmark-Norway and the duchies. Previously, all writings required approval from University of Copenhagen professors.
-This reform, introduced by Johann Friedrich Struensee, ended with his execution in 1772, and press freedom did not return until 1849. The surviving texts provide rare insight into autocratic Denmark of the early 1770s.
-Publications from this brief period ranged from serious political, philosophical, and economic works to satire, fiction, gossip, and even pornography.
-Government official and scholar Bolle Willum Luxdorph (1716–88) recognized the significance of this moment and privately collected and organized these writings into 47 bound volumes, preserving them as a record of Denmark’s short-lived experiment with press freedom.</p>
-<p>These volumes have been digitised by the Royal Danish Library with support from Carlsberg Foundation in connection with a comprehensive analysis and description of the collection carried out by Ulrik Langen, Frederik Stjernfelt and Henrik Horstbøl. The texts are in Danish.</p>
-<p>These texts will be the point of departure in this notebook, where we want to examine trends in the use of words in the text of the Freedom of the Press using R for preforming this text mining task.</p>
-<p>These pages are about processing the Freedom of the Press text as data and extracting indsights quantitatively. If you wannw read the texts the classical way you can see them at: <a href="https://tekster.kb.dk">https://tekster.kb.dk</a></p>
+<div id="loading-the-data" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">2</span> Loading the data<a href="loading-the-data.html#loading-the-data" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="loading-libraries" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Loading libraries<a href="loading-the-data.html#loading-libraries" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The dataset is processed in the software programme R, offering various methods for statistical analysis and graphic representation of the results. In R, one works with packages each adding numerous functionalities to the core functions of R. In this example, the relevant packages are:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="loading-the-data.html#cb1-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="loading-the-data.html#cb1-2" tabindex="-1"></a><span class="fu">library</span>(tidytext)</span>
+<span id="cb1-3"><a href="loading-the-data.html#cb1-3" tabindex="-1"></a><span class="fu">library</span>(stopwords)</span>
+<span id="cb1-4"><a href="loading-the-data.html#cb1-4" tabindex="-1"></a><span class="fu">library</span>(quanteda)</span></code></pre></div>
+</div>
+<div id="load-data" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Load Data<a href="loading-the-data.html#load-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The code below reads data from a CSV file named “tfs_structured.csv” and stores it in a variable called tfs.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="loading-the-data.html#cb2-1" tabindex="-1"></a>tfs <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://raw.githubusercontent.com/maxodsbjerg/TextMiningTFS/refs/heads/main/data/tfs_structured.csv&quot;</span>)</span></code></pre></div>
+<pre><code>## Rows: 28133 Columns: 14
+## ── Column specification ─────────────────────────────────────────────────────────────────────────────────────────
+## Delimiter: &quot;,&quot;
+## chr (11): files, tekst, content, refnr, Titel, Bogtrykker/forlægger, Format, sider, Forfatter, Udg.år, Averte...
+## dbl  (3): række, bind, side
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<p>Here’s a breakdown of what each part of the code does: * &lt;-: The assignment operator in R assigns the result of the operation on the right-hand side to the variable on the left-hand side. * read_csv: This is a function in R that reads data from a CSV file. “data/tfs_structured.csv”: This is the file path where the CSV file is located. It tells R where to find the file. In this case, the file is located in a folder called “data” and its name is “tfs_structured.csv”. * tfs: This is the name of the variable where the data from the CSV file will be stored. Once the data is read, it will be accessible in R using this variable name. In summary, the code reads data from a CSV file named “tfs_structured.csv” and stores it in a variable called tfs, allowing the data to be manipulated and analyzed in R.</p>
 
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="loading-the-data.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="introduction.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="converting-to-tidy-text-format.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

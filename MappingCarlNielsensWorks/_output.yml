@@ -3,7 +3,7 @@ bookdown::gitbook:
     toc:
       collapse: section        # Collapses subsections in TOC
       before: |
-        <img src="../img/DKB_logo_simplified_black_RGB.png" style="display: block; margin: 0 auto; width: 50%;" alt="Description">
+        <img src="img/DKB_logo_simplified_black_RGB.png" style="display: block; margin: 0 auto; width: 50%;" alt="Description">
     download: ["pdf", "epub"]  # Adds download links at the top of the book
     language:
       ui:

@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>3 Loading libraries | _main.knit</title>
+  <title>3 Converting to Tidy Text Format | _main.knit</title>
   <meta name="description" content="" />
   <meta name="generator" content="bookdown 0.44 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="3 Loading libraries | _main.knit" />
+  <meta property="og:title" content="3 Converting to Tidy Text Format | _main.knit" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="3 Loading libraries | _main.knit" />
+  <meta name="twitter:title" content="3 Converting to Tidy Text Format | _main.knit" />
   
   
   
@@ -29,7 +29,7 @@
   
   
 <link rel="prev" href="loading-the-data.html"/>
-<link rel="next" href="converting-to-tidy-text-format.html"/>
+<link rel="next" href="analysis.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -135,7 +135,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<img src="img/DKB_logo_simplified_black_RGB.png" style="display: block; margin: 0 auto; width: 50%;" alt="Description">
+<img src="../img/DKB_logo_simplified_black_RGB.png" style="display: block; margin: 0 auto; width: 50%;" alt="Description">
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
@@ -143,18 +143,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#overview"><i class="fa fa-check"></i><b>0.1</b> Overview</a></li>
 </ul></li>
 <li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
-<li class="chapter" data-level="2" data-path="loading-the-data.html"><a href="loading-the-data.html"><i class="fa fa-check"></i><b>2</b> Loading the data</a></li>
-<li class="chapter" data-level="3" data-path="loading-libraries.html"><a href="loading-libraries.html"><i class="fa fa-check"></i><b>3</b> Loading libraries</a>
+<li class="chapter" data-level="2" data-path="loading-the-data.html"><a href="loading-the-data.html"><i class="fa fa-check"></i><b>2</b> Loading the data</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="loading-libraries.html"><a href="loading-libraries.html#load-data"><i class="fa fa-check"></i><b>3.1</b> Load Data</a></li>
+<li class="chapter" data-level="2.1" data-path="loading-the-data.html"><a href="loading-the-data.html#loading-libraries"><i class="fa fa-check"></i><b>2.1</b> Loading libraries</a></li>
+<li class="chapter" data-level="2.2" data-path="loading-the-data.html"><a href="loading-the-data.html#load-data"><i class="fa fa-check"></i><b>2.2</b> Load Data</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="converting-to-tidy-text-format.html"><a href="converting-to-tidy-text-format.html"><i class="fa fa-check"></i><b>4</b> Converting to Tidy Text Format</a></li>
-<li class="chapter" data-level="5" data-path="analysis.html"><a href="analysis.html"><i class="fa fa-check"></i><b>5</b> Analysis</a>
+<li class="chapter" data-level="3" data-path="converting-to-tidy-text-format.html"><a href="converting-to-tidy-text-format.html"><i class="fa fa-check"></i><b>3</b> Converting to Tidy Text Format</a></li>
+<li class="chapter" data-level="4" data-path="analysis.html"><a href="analysis.html"><i class="fa fa-check"></i><b>4</b> Analysis</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="analysis.html"><a href="analysis.html#initial"><i class="fa fa-check"></i><b>5.1</b> INitial</a></li>
-<li class="chapter" data-level="5.2" data-path="analysis.html"><a href="analysis.html#handling-stopword"><i class="fa fa-check"></i><b>5.2</b> Handling Stopword</a></li>
-<li class="chapter" data-level="5.3" data-path="analysis.html"><a href="analysis.html#keywords-in-context-kwic-analysis"><i class="fa fa-check"></i><b>5.3</b> Keywords in Context (KWIC) Analysis</a></li>
-<li class="chapter" data-level="5.4" data-path="analysis.html"><a href="analysis.html#bigram-analysis"><i class="fa fa-check"></i><b>5.4</b> Bigram Analysis</a></li>
+<li class="chapter" data-level="4.1" data-path="analysis.html"><a href="analysis.html#initial-analysis"><i class="fa fa-check"></i><b>4.1</b> Initial analysis</a></li>
+<li class="chapter" data-level="4.2" data-path="analysis.html"><a href="analysis.html#handling-stopword"><i class="fa fa-check"></i><b>4.2</b> Handling Stopword</a></li>
+<li class="chapter" data-level="4.3" data-path="analysis.html"><a href="analysis.html#keywords-in-context-kwic-analysis"><i class="fa fa-check"></i><b>4.3</b> Keywords in Context (KWIC) Analysis</a></li>
+<li class="chapter" data-level="4.4" data-path="analysis.html"><a href="analysis.html#bigram-analysis"><i class="fa fa-check"></i><b>4.4</b> Bigram Analysis</a></li>
 </ul></li>
 </ul>
 
@@ -173,42 +173,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="loading-libraries" class="section level1 hasAnchor" number="3">
-<h1><span class="header-section-number">3</span> Loading libraries<a href="loading-libraries.html#loading-libraries" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>The dataset is processed in the software programme R, offering various methods for statistical analysis and graphic representation of the results. In R, one works with packages each adding numerous functionalities to the core functions of R. In this example, the relevant packages are:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="loading-libraries.html#cb1-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
-<pre><code>## ── Attaching core tidyverse packages ───────────────────────────────────────────────────────── tidyverse 2.0.0 ──
-## ✔ dplyr     1.1.4     ✔ readr     2.1.5
-## ✔ forcats   1.0.0     ✔ stringr   1.5.1
-## ✔ ggplot2   3.5.2     ✔ tibble    3.3.0
-## ✔ lubridate 1.9.4     ✔ tidyr     1.3.1
-## ✔ purrr     1.1.0     
-## ── Conflicts ─────────────────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
-## ✖ dplyr::filter() masks stats::filter()
-## ✖ dplyr::lag()    masks stats::lag()
-## ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="loading-libraries.html#cb3-1" tabindex="-1"></a><span class="fu">library</span>(tidytext)</span>
-<span id="cb3-2"><a href="loading-libraries.html#cb3-2" tabindex="-1"></a><span class="fu">library</span>(stopwords)</span>
-<span id="cb3-3"><a href="loading-libraries.html#cb3-3" tabindex="-1"></a><span class="fu">library</span>(quanteda)</span></code></pre></div>
-<pre><code>## Package version: 4.3.1
-## Unicode version: 14.0
-## ICU version: 71.1
-## Parallel computing: disabled
-## See https://quanteda.io for tutorials and examples.</code></pre>
-<div id="load-data" class="section level2 hasAnchor" number="3.1">
-<h2><span class="header-section-number">3.1</span> Load Data<a href="loading-libraries.html#load-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>The code below reads data from a CSV file named “tfs_structured.csv” and stores it in a variable called tfs.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="loading-libraries.html#cb5-1" tabindex="-1"></a>tfs <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://raw.githubusercontent.com/maxodsbjerg/TextMiningTFS/refs/heads/main/data/tfs_structured.csv&quot;</span>)</span></code></pre></div>
-<pre><code>## Rows: 28133 Columns: 14
-## ── Column specification ─────────────────────────────────────────────────────────────────────────────────────────
-## Delimiter: &quot;,&quot;
-## chr (11): files, tekst, content, refnr, Titel, Bogtrykker/forlægger, Format, sider, Forfatter, Udg.år, Averte...
-## dbl  (3): række, bind, side
-## 
-## ℹ Use `spec()` to retrieve the full column specification for this data.
-## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<div id="converting-to-tidy-text-format" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">3</span> Converting to Tidy Text Format<a href="converting-to-tidy-text-format.html#converting-to-tidy-text-format" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>This code takes the data stored in the variable tfs, which contains text data from Trykkefrihedens skrifter, and converts it into a tidy format suitable for text analysis.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="converting-to-tidy-text-format.html#cb4-1" tabindex="-1"></a>tfs_tidy <span class="ot">&lt;-</span> tfs <span class="sc">%&gt;%</span> </span>
+<span id="cb4-2"><a href="converting-to-tidy-text-format.html#cb4-2" tabindex="-1"></a>  <span class="fu">unnest_tokens</span>(word, content)</span></code></pre></div>
+<p>Here’s a breakdown of the code: tfs_tidy: This is a new variable where the transformed data will be stored. tfs %&gt;%: This is the pipe operator %&gt;%, which is used to chain operations together in R. It takes the data frame tfs and passes it as the first argument to the function or operation that follows. unnest_tokens(word, content): This is a function call from the tidytext package. It tokenizes the text data, breaking it down into individual words. The word argument specifies the name of the column that will contain the individual words, and the content argument specifies the column containing the text data to be tokenized. In summary, the code transforms the original data frame tfs by breaking down the text data into individual words and storing them in a new variable called tfs_tidy, making it suitable for further text analysis tasks.</p>
 
-</div>
 </div>
             </section>
 
@@ -216,7 +187,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         </div>
       </div>
 <a href="loading-the-data.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="converting-to-tidy-text-format.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="analysis.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -279,6 +250,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>
