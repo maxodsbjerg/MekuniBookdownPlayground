@@ -1,0 +1,12 @@
+# Introduction
+
+On September 14, 1770, Christian VII issued a rescript granting complete freedom of the press in Denmark-Norway and the duchies. Previously, all writings required approval from University of Copenhagen professors.
+This reform, introduced by Johann Friedrich Struensee, ended with his execution in 1772, and press freedom did not return until 1849. The surviving texts provide rare insight into autocratic Denmark of the early 1770s.
+Publications from this brief period ranged from serious political, philosophical, and economic works to satire, fiction, gossip, and even pornography.
+Government official and scholar Bolle Willum Luxdorph (1716–88) recognized the significance of this moment and privately collected and organized these writings into 47 bound volumes, preserving them as a record of Denmark’s short-lived experiment with press freedom.
+
+These volumes have been digitised by the Royal Danish Library with support from Carlsberg Foundation in connection with a comprehensive analysis and description of the collection carried out by Ulrik Langen, Frederik Stjernfelt and Henrik Horstbøl. The texts are in Danish.
+
+These texts will be the point of departure in this notebook, where we want to examine trends in the use of words in the text of the Freedom of the Press using R for preforming this text mining task.
+
+These pages are about processing the Freedom of the Press text as data and extracting indsights quantitatively. If you wannw read the texts the classical way you can see them at: [https://tekster.kb.dk](https://tekster.kb.dk)

@@ -1,0 +1,22 @@
+# Loading the data
+
+## Loading libraries
+
+The dataset is processed in the software programme R, offering various methods for statistical analysis and graphic representation of the results. In R, one works with packages each adding numerous functionalities to the core functions of R. In this example, the relevant packages are:
+
+```{r}
+library(tidyverse)
+library(tidytext)
+library(stopwords)
+library(quanteda)
+```
+
+## Load Data
+
+The code below reads data from a CSV file named "tfs_structured.csv" and stores it in a variable called tfs.
+
+```{r}
+tfs <- read_csv("https://raw.githubusercontent.com/maxodsbjerg/TextMiningTFS/refs/heads/main/data/tfs_structured.csv")
+```
+
+Here's a breakdown of what each part of the code does: \* \<-: The assignment operator in R assigns the result of the operation on the right-hand side to the variable on the left-hand side. \* read_csv: This is a function in R that reads data from a CSV file. "data/tfs_structured.csv": This is the file path where the CSV file is located. It tells R where to find the file. In this case, the file is located in a folder called "data" and its name is "tfs_structured.csv". \* tfs: This is the name of the variable where the data from the CSV file will be stored. Once the data is read, it will be accessible in R using this variable name. In summary, the code reads data from a CSV file named "tfs_structured.csv" and stores it in a variable called tfs, allowing the data to be manipulated and analyzed in R. 

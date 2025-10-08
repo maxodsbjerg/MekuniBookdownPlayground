@@ -1,0 +1,10 @@
+# Converting to Tidy Text Format
+
+This code takes the data stored in the variable tfs, which contains text data from Trykkefrihedens skrifter, and converts it into a tidy format suitable for text analysis.
+
+```{r}
+tfs_tidy <- tfs %>% 
+  unnest_tokens(word, content)
+```
+
+Here's a breakdown of the code: tfs_tidy: This is a new variable where the transformed data will be stored. tfs %\>%: This is the pipe operator %\>%, which is used to chain operations together in R. It takes the data frame tfs and passes it as the first argument to the function or operation that follows. unnest_tokens(word, content): This is a function call from the tidytext package. It tokenizes the text data, breaking it down into individual words. The word argument specifies the name of the column that will contain the individual words, and the content argument specifies the column containing the text data to be tokenized. In summary, the code transforms the original data frame tfs by breaking down the text data into individual words and storing them in a new variable called tfs_tidy, making it suitable for further text analysis tasks.
