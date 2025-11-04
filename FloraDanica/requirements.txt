@@ -1,0 +1,11 @@
+jupyter-book
+matplotlib
+numpy
+pandas
+beautifulsoup4
+lxml
+nltk
+requests
+plotly
+Pillow
+openpyxl

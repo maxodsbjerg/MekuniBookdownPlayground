@@ -1,0 +1,12 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+chapters:
+  - file: Clean the Flora Danica dataset
+    title: Clean the Flora Danica dataset
+  - file: Visualise the Flora Danicas metadata
+    title: Visualise the Flora Danica metadata
+  - file: Change size on tiff files of Flora Danica
+    title: Change size on tiff files of Flora Danica
